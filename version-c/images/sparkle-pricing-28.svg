@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="sparkle" clip-path="url(#clip0_0_4)">
+<path id="Vector" d="M14 0C15.1667 8.16667 19.8333 12.8333 28 14C19.8333 15.1667 15.1667 19.8333 14 28C12.8333 19.8333 8.16667 15.1667 0 14C8.16667 12.8333 12.8333 8.16667 14 0Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_0_4">
+<rect width="28" height="28" fill="white"/>
+</clipPath>
+</defs>
+</svg>
