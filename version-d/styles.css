@@ -192,3 +192,143 @@ body { background: #fff; font-family: var(--f-text); color: var(--ink); }
 .footer__left p { font: 400 14px/16px var(--f-text); color: #fff; white-space: pre; }
 .footer__sep { flex: none; width: 1px; height: 16px; border-radius: 36px; background: #fff; }
 .footer__links { display: flex; align-items: flex-start; flex: none; gap: 28px; overflow: clip; font: 700 28px/41px var(--f-btn); color: #fff; white-space: nowrap; }
+
+/* ---------- Responsive ----------
+   The 1440px layout above is untouched. Everything below only applies
+   when the viewport is narrower than that. */
+
+/* Fluid: content follows the viewport instead of a fixed 1320px */
+@media (max-width: 1439px) {
+  .page { padding: 16px 24px; gap: 96px; }
+  .main { gap: 96px; }
+  .nav, .stats, .features__row, .how, .pricing, .quotes, .faq, .closing, .footer, .end { width: 100%; max-width: 1320px; }
+  .nav__brand { width: auto; }
+  .security { width: 100%; max-width: 1440px; padding: 0 24px; }
+  .press__row { width: 100%; max-width: 1280px; padding: 0 24px; }
+  .hero { width: 100%; max-width: 836px; }
+  .hero__title { font-size: clamp(48px, 6.25vw, 90px); line-height: 0.956; }
+  .hero__sub { width: 100%; max-width: 620px; }
+  .hero__artbox { width: min(1543px, 107vw); height: auto; aspect-ratio: 1543 / 782; }
+  .stats { padding: 40px 40px 64px; }
+  .stats__intro { width: 100%; max-width: 793px; }
+  .stats__row { width: 100%; gap: 24px; }
+  .stat { flex: 1 1 0; min-width: 0; }
+  .stat--373, .stat--374 { width: auto; }
+  .stat__body { width: 100%; }
+  .features { width: 100%; }
+  .how { padding: 80px 48px; gap: 48px; }
+  .how__title, .how__intro { width: 100%; }
+  .faq { gap: 48px; }
+  .faq__qa { width: auto; flex: 1 1 0; min-width: 0; }
+  .faq__art { width: 40%; height: auto; aspect-ratio: 620 / 600; flex: 0 1 620px; }
+  .closing { padding: 80px 48px; }
+  .footer { height: auto; padding: 24px; gap: 24px; }
+}
+
+/* Feature cards: three-up grid once the overlap layout no longer fits */
+@media (max-width: 1359px) {
+  .features__row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; height: auto; align-items: stretch; }
+  .features__row > .fcard { order: 1; width: auto; height: auto; padding: 40px 32px; }
+  .features__row > .fcard:nth-child(2) { order: 3; }
+  .features__row > .fcard--feature { order: 2; position: static; transform: none; padding: 40px 32px; }
+  .fcard__title, .fcard__text, .fcard--feature .fcard__title, .fcard--feature .fcard__text { width: 100%; }
+}
+
+/* Tablet: stack the two-column sections */
+@media (max-width: 1100px) {
+  .h2 { white-space: normal; text-align: center; font-size: clamp(34px, 4.6vw, 50px); line-height: 1.25; }
+  .security .h2 { text-align: left; }
+  .how { flex-direction: column; align-items: stretch; padding: 64px 40px; }
+  .how__col { flex: none; width: 100%; }
+  .how__title { font-size: clamp(34px, 4.6vw, 50px); line-height: 1.25; }
+  .graphic { width: 100%; max-width: 520px; height: auto; margin: 0 auto; padding: 40px 24px; display: flex; flex-direction: column; gap: 16px; border-radius: 32px; }
+  .suggest, .milestone { position: static; width: 100%; max-width: 420px; margin-inline: auto; }
+  .suggest__intro p:first-child { width: 100%; }
+  .security__cards { flex-direction: column; }
+  .scard, .scard--first { flex: none; width: 100%; align-self: auto; }
+  .quotes { padding: 40px 32px 48px; }
+  .quotes__row { flex-direction: column; }
+  .quote { flex: none; width: 100%; align-self: auto; }
+  .quote__by p:first-child, .quote__by p:last-child { width: 100%; }
+  .faq { flex-direction: column; align-items: stretch; }
+  .faq__col { flex: none; width: 100%; }
+  .faq__art { width: 100%; max-width: 620px; flex: none; margin: 0 auto; }
+  .pricing__head { white-space: normal; }
+  .pricing__price { font-size: clamp(56px, 8vw, 90px); line-height: 1.3; }
+  .pricing__free { white-space: normal; }
+  .chips { flex-wrap: wrap; justify-content: center; }
+  .press__row { flex-wrap: wrap; justify-content: center; gap: 28px 48px; }
+  .closing__title { white-space: normal; text-align: center; font-size: clamp(34px, 4.6vw, 50px); line-height: 1.25; }
+  .footer { flex-direction: column; align-items: flex-start; }
+  .footer__left { flex-wrap: wrap; row-gap: 8px; }
+  .footer__left p { white-space: normal; }
+}
+
+/* Small tablet / large phone */
+@media (max-width: 860px) {
+  .features__row { grid-template-columns: 1fr; }
+  .features__row > .fcard { padding: 32px 28px; }
+  .stats__row { flex-direction: column; gap: 8px; }
+  .stat { flex: none; width: 100%; }
+}
+
+/* Phone */
+@media (max-width: 640px) {
+  .page { padding: 12px 16px; gap: 64px; }
+  .main { gap: 64px; }
+  .nav { padding: 12px 16px; border-radius: 12px; }
+  .nav__link { display: none; }
+  .btn { padding: 8px 20px 4px; }
+  .hero { gap: 24px; }
+  .hero__title { font-size: clamp(40px, 12.5vw, 56px); line-height: 1; }
+  .hero__sub { font-size: 18px; line-height: 27px; }
+  .hero__buttons { gap: 12px; margin-bottom: -24px; }
+  .hero__artbox { width: 150vw; }
+  .h2, .how__title, .closing__title { font-size: 32px; line-height: 1.25; }
+  .stats { padding: 32px 20px 40px; }
+  .stats__intro { font-size: 18px; line-height: 27px; }
+  .stat__fig { font-size: 52px; line-height: 60px; }
+  .press__row { padding: 0; gap: 24px 32px; }
+  .press__logo { height: 24px; }
+  .press__logo--fast { width: 161px; }
+  .press__logo--wired { width: 119px; }
+  .press__logo--wsj { width: 42.6px; height: 24px; }
+  .press__logo--forbes { width: 88.8px; }
+  .press__logo--tc { width: 164.6px; }
+  .press__logo--bloomberg { width: 119px; }
+  .how { padding: 40px 16px; gap: 32px; border-radius: 12px; }
+  .step { padding: 16px; }
+  .graphic { padding: 24px 12px; border-radius: 24px; }
+  .suggest { padding: 16px; border-radius: 20px; }
+  .option p { font-size: 14px; }
+  .security { padding: 0; }
+  .scard { padding: 28px 24px; }
+  .scard h3 { font-size: 28px; line-height: 34px; }
+  .pricing__panel { padding: 56px 20px; border-radius: 12px; }
+  .pricing__title { font-size: 32px; line-height: 1.3; }
+  .pricing__price { font-size: 56px; line-height: 1.3; }
+  .quotes { padding: 32px 16px 36px; border-radius: 12px; }
+  .quote { padding: 28px 24px; }
+  .quote__text { font-size: 26px; line-height: 32px; }
+  .quote__by p:first-child { font-size: 18px; line-height: 21px; }
+  .faq h3 { font-size: 18px; line-height: 22px; }
+  .faq__row { gap: 16px; }
+  .closing { padding: 56px 20px; border-radius: 12px; }
+  .footer { padding: 20px 16px; border-radius: 12px; }
+  .footer__links { flex-wrap: wrap; gap: 8px 24px; }
+}
+
+@media (max-width: 1439px) {
+  .glance, .press, .security, .end { width: 100%; }
+  .main > section { min-width: 0; }
+  .stats__inner { width: 100%; }
+}
+
+@media (max-width: 1100px) {
+  .suggest__intro { width: 100%; }
+  .suggest__intro p:last-child { white-space: normal; }
+}
+
+@media (max-width: 1439px) {
+  .hero__title, .h2, .how__title, .closing__title { text-wrap: balance; }
+}

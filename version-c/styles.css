@@ -297,3 +297,120 @@ body { background: var(--cream); color: var(--ink); font-family: var(--f-text); 
 .footer__left { display: flex; align-items: center; flex: none; gap: 16px; overflow: clip; }
 .footer__left p { font: 500 15px/20px var(--f-text); font-variation-settings: var(--v-text); color: var(--cream); white-space: nowrap; }
 .footer__links { display: flex; align-items: flex-start; flex: none; gap: 32px; overflow: clip; font: 600 15px/20px var(--f-text); font-variation-settings: var(--v-text); color: var(--cream); white-space: nowrap; }
+
+/* ---------- Responsive ----------
+   The 1440px layout above is untouched; everything below only applies
+   to narrower viewports. */
+
+@media (max-width: 1439px) {
+  :root { --px: clamp(20px, 6vw, 120px); }
+  .header, .hero, .numbers, .benefits, .how, .security, .pricing, .testimonials, .questions, .closing, .smallprint, .footer { padding-left: var(--px); padding-right: var(--px); }
+  .h2 { font-size: clamp(36px, 4.4vw, 60px); letter-spacing: -0.03em; text-wrap: balance; }
+  .hero { gap: 32px; }
+  .hero__title { font-size: clamp(44px, 5.7vw, 82px); line-height: 0.963; letter-spacing: -0.03em; text-wrap: balance; }
+  .hero__sub { width: 100%; max-width: 560px; }
+  .tile__label { white-space: normal; }
+  .tile__fig { font-size: clamp(40px, 4vw, 56px); }
+  .cards--security .card { height: auto; }
+  .how { gap: 40px; }
+  .how__photo { flex: 0 1 560px; width: 100%; max-width: 560px; height: auto; aspect-ratio: 560 / 660; }
+  .how__img { left: 3.57%; width: 96.43%; height: 96.97%; }
+  .pricing__panel { padding-left: 40px; padding-right: 40px; }
+  .pricing__price { font-size: clamp(56px, 8.5vw, 112px); letter-spacing: -0.04em; }
+  .chips { flex-wrap: wrap; justify-content: center; }
+  .quote { padding: 36px 32px 32px; }
+  .quote__text { font-size: clamp(24px, 2.4vw, 34px); line-height: 1.2; }
+  .faq { gap: 48px; }
+  .faq__graphic { flex: none; }
+  .closing__title { font-size: clamp(44px, 5.6vw, 80px); letter-spacing: -0.03em; white-space: normal; text-align: center; text-wrap: balance; }
+  .closing__panel { padding-left: 24px; padding-right: 24px; }
+}
+
+/* Tablet: stack the two-column sections */
+@media (max-width: 1100px) {
+  .header { padding-top: 20px; padding-bottom: 20px; }
+  .hero { flex-direction: column; align-items: stretch; padding-top: 32px; padding-bottom: 72px; }
+  .hero__text { flex: none; width: 100%; }
+  .hero__art { align-self: center; }
+  .trust { flex-wrap: wrap; gap: 12px 24px; }
+  .how { flex-direction: column; align-items: stretch; padding-top: 48px; padding-bottom: 80px; }
+  .how__steps { flex: none; width: 100%; }
+  .how__photo { align-self: center; }
+  .faq { flex-direction: column; align-items: stretch; }
+  .faq__col { flex: none; width: 100%; }
+  .faq__graphic { align-self: center; }
+  .benefits, .security { border-radius: 36px 36px 0 0; padding-top: 72px; padding-bottom: 72px; }
+  .numbers { padding-bottom: 72px; }
+  .testimonials, .questions { padding-top: 72px; }
+  .pricing { padding-bottom: 80px; }
+  .pricing__title, .pricing__free { white-space: normal; text-align: center; }
+  .footer { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .footer__left { flex-wrap: wrap; row-gap: 8px; }
+  .footer__left p { white-space: normal; }
+  .footer__links { flex-wrap: wrap; gap: 8px 24px; }
+}
+
+/* Large phone / small tablet: single-column card rows */
+@media (max-width: 860px) {
+  .tiles, .cards, .quotes { flex-direction: column; }
+  .tile, .card, .quote { flex: none; width: 100%; align-self: auto; }
+  .tile { padding: 36px 28px 28px; }
+  .tile__fig { font-size: 52px; }
+}
+
+/* Phone */
+@media (max-width: 640px) {
+  .nav { gap: 12px; }
+  .nav__link { display: none; }
+  .logo__word { font-size: 26px; line-height: 32px; }
+  .btn-signup { padding: 11px 20px; }
+  .hero { gap: 24px; padding-top: 16px; padding-bottom: 56px; }
+  .hero__text { gap: 22px; }
+  .hero__title { font-size: clamp(40px, 12.5vw, 54px); line-height: 1; }
+  .hero__sub { font-size: 18px; line-height: 28px; }
+  .hero__buttons { flex-wrap: wrap; }
+  .btn { padding: 16px 24px; }
+  .btn--lime { padding: 16px 26px; }
+  .hero__art { zoom: 0.58; }
+  .h2 { font-size: 34px; }
+  .numbers, .benefits, .security { gap: 20px; }
+  .benefits, .security { border-radius: 28px 28px 0 0; padding-top: 56px; padding-bottom: 56px; }
+  .card { padding: 28px 24px 30px; border-radius: 28px; }
+  .card__title { font-size: 25px; line-height: 28px; }
+  .how { padding-top: 40px; padding-bottom: 64px; }
+  .step { padding: 20px 18px 22px; gap: 14px; border-radius: 24px; }
+  .step__num { width: 40px; height: 40px; border-radius: 20px; }
+  .step__text h3 { font-size: 21px; line-height: 26px; }
+  .pricing { padding-top: 8px; padding-bottom: 56px; }
+  .pricing__panel { padding: 56px 20px; border-radius: 32px; }
+  .pricing__title { font-size: 32px; line-height: 40px; }
+  .pricing__price { font-size: 48px; }
+  .pricing__free { font-size: 18px; line-height: 24px; }
+  .testimonials { padding-top: 56px; padding-bottom: 56px; }
+  .quote { border-radius: 28px; padding: 28px 24px; gap: 24px; }
+  .quote__text { font-size: 26px; }
+  .questions { padding-top: 24px; padding-bottom: 64px; }
+  .faq__q { font-size: 20px; line-height: 25px; }
+  .faq__row { gap: 16px; }
+  .faq__a { font-size: 16px; line-height: 24px; }
+  .faq__graphic { zoom: 0.64; }
+  .closing { padding-top: 8px; padding-bottom: 64px; }
+  .closing__panel { padding: 56px 20px 48px; border-radius: 32px; }
+  .closing__title { font-size: 44px; }
+  .closing .trust { justify-content: center; }
+  .smallprint { padding-top: 8px; padding-bottom: 32px; }
+  .footer { padding-top: 28px; padding-bottom: 28px; }
+}
+
+/* Keep absolutely placed overhangs inside the viewport on narrow screens */
+@media (max-width: 1100px) {
+  .how__photo .notif { left: 12px !important; top: auto !important; bottom: 5%; }
+  .how__photo .abs { left: auto !important; right: 0; }
+}
+@media (max-width: 640px) {
+  .hero__art .notif { left: 0 !important; }
+  .hero { overflow-x: clip; }
+}
+@media (max-width: 640px) {
+  .pricing__panel .abs[src*="sparkle"] { display: none; }
+}
